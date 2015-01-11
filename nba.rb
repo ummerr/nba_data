@@ -21,7 +21,7 @@ class Player
   end
 
   def to_s
-    self.name self.position self.age self.minutes_played
+    name + position + team + season_end + field_goal_attempts
   end
 
 end
@@ -55,8 +55,7 @@ end
 
 guys = PlayerParser.player_parse("nba_data.csv")
 p guys[5000]
-raptors = guys.select {|player| player.team == "MIL"}
-p raptors
+raptors = guys.select {|player| player.team == "TOR"}
 
-playe = Player.new(name: 'Amar')
-puts playe
+raptors.each {|raptor| puts raptor}
+
