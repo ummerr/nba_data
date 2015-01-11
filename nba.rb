@@ -20,6 +20,10 @@ class Player
     @season_end = args[:season_end]
   end
 
+  def to_s
+    self.name self.position self.age self.minutes_played
+  end
+
 end
 
 module PlayerParser
@@ -51,7 +55,8 @@ end
 
 guys = PlayerParser.player_parse("nba_data.csv")
 p guys[5000]
-raptors = guys.select {|player| player.team == "TOR"}
+raptors = guys.select {|player| player.team == "MIL"}
 p raptors
 
-raptors.each {|raptor| p raptor.name}
+playe = Player.new(name: 'Amar')
+puts playe
