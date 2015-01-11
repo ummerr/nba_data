@@ -33,4 +33,4 @@ ActiveRecord::Base.establish_connection(database_config)
 
 
 # Establish connection between models and tables
-ActiveRecord::Base.connection
+ActiveRecord::Base.establish_connection
