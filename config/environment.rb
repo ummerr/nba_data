@@ -35,7 +35,7 @@ ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # Configure the database
 database_config = { :adapter  =>  "sqlite3",
-                    :database => "#{APP_ROOT}/db/dogs.sqlite3" }
+                    :database => "#{APP_ROOT}/db/players.sqlite3" }
 
 ActiveRecord::Base.establish_connection(database_config)
 
