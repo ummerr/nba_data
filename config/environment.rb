@@ -12,6 +12,14 @@ path_to_root_directory = File.expand_path('../../', __FILE__)
 APP_ROOT = Pathname.new(path_to_root_directory)
 
 
+# Load the files in APP_ROOT/lib
+lib_files = Dir[APP_ROOT.join('lib', '*.rb')]
+
+lib_files.each do |file|
+  require file
+end
+
+
 # Load the files in APP_ROOT/app/models/
 model_files = Dir[APP_ROOT.join('app', 'models', '*.rb')]
 
@@ -33,4 +41,4 @@ ActiveRecord::Base.establish_connection(database_config)
 
 
 # Establish connection between models and tables
-ActiveRecord::Base.establish_connection
+ActiveRecord::Base.connection

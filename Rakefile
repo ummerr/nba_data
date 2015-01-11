@@ -17,13 +17,13 @@ end
 namespace :db do
   desc "Create the database"
   task :create do
-    touch "db/nba_players.sqlite3"
+    touch "db/dogs.sqlite3"
   end
 
 
   desc "Drop the database"
   task :drop do
-    rm_f "db/nba_players.sqlite3"
+    rm_f "db/dogs.sqlite3"
   end
 
 
