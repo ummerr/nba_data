@@ -3,7 +3,7 @@ require 'pry'
 
 class Player
 
-  attr_reader :name, :position, :age, :team, :games, :games_started, :minutes_played, :field_goals, :field_goal_attempts, :field_goal_percentage
+  attr_reader :name, :position, :age, :team, :games, :games_started, :minutes_played, :field_goals, :field_goal_attempts, :field_goal_percentage, :season, :season_end
 
   def initialize(args = {})
     @name = args[:name]
@@ -16,7 +16,8 @@ class Player
     @field_goals = args[:field_goals]
     @field_goal_attempts = args[:field_goal_attempts]
     @field_goal_percentage = args[:field_goal_percentage]
-    @season = args[:season]
+    @season = args[:seaons]
+    @season_end = args[:season_end]
   end
 
 end
@@ -38,11 +39,13 @@ module PlayerParser
       :field_goals => row[7],
       :field_goal_attempts => row[8],
       :field_goal_percentage => row[9],
-      :season => row[30])
+      :season => row[29],
+      :season_end => row[30])
       players << player
     end
     players
   end
+
 
 end
 
@@ -51,5 +54,4 @@ p guys[5000]
 raptors = guys.select {|player| player.team == "TOR"}
 p raptors
 
-old_guys = guys.select {|player| player.age >= 36 }
-p old_guys
+raptors.each {|raptor| p raptor.name}
