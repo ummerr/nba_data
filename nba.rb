@@ -3,6 +3,8 @@ require 'pry'
 
 class Player
 
+  attr_reader :name, :position, :age, :team, :games, :games_started, :minutes_played, :field_goals, :field_goal_attempts, :field_goal_percentage
+
   def initialize(args = {})
     @name = args[:name]
     @position = args[:position]
@@ -14,6 +16,7 @@ class Player
     @field_goals = args[:field_goals]
     @field_goal_attempts = args[:field_goal_attempts]
     @field_goal_percentage = args[:field_goal_percentage]
+    @season = args[:season]
   end
 
 end
@@ -27,14 +30,15 @@ module PlayerParser
       player = Player.new(
       :name => row[0],
       :position => row[1],
-      :age => row[2],
+      :age => row[2].to_i,
       :team => row[3],
       :games => row[4],
       :games_started => row[5],
       :minutes_played => row[6],
       :field_goals => row[7],
       :field_goal_attempts => row[8],
-      :field_goal_percentage => row[9])
+      :field_goal_percentage => row[9],
+      :season => row[30])
       players << player
     end
     players
@@ -45,5 +49,7 @@ end
 guys = PlayerParser.player_parse("nba_data.csv")
 p guys[5000]
 raptors = guys.select {|player| player.team == "TOR"}
-p rapors
+p raptors
 
+old_guys = guys.select {|player| player.age >= 36 }
+p old_guys
