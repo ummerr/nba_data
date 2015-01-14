@@ -31,7 +31,7 @@ module PlayerParser
   def self.player_parse(file)
     players = []
     CSV.foreach(file, :headers => true) do |row|
-      player = Player.new(
+      player = Player.create({
       :name => row[0],
       :position => row[1],
       :age => row[2].to_i,
@@ -43,7 +43,7 @@ module PlayerParser
       :field_goal_attempts => row[8],
       :field_goal_percentage => row[9],
       :season => row[29],
-      :season_end => row[30])
+      :season_end => row[30]})
       players << player
     end
     players
@@ -54,8 +54,12 @@ end
 class Nba
 
   def initialize
-    @all_players = PlayerParser.player_parse("nba_data.csv")
+    @all_players = PlayerParser.player_parse("db/nba_data.csv")
   end
+
+  # def save_players
+  #   @all_players.each {|player| p player}
+  # end
 
 end
 

@@ -53,7 +53,7 @@ module PlayerParser
 
 end
 
-guys = PlayerParser.player_parse("nba_data.csv")
+guys = PlayerParser.player_parse("db/nba_data.csv")
 p guys[5000]
 raptors = guys.select {|player| player.team == "TOR"}
 
