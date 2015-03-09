@@ -8,7 +8,6 @@ require 'open-uri'
 class TeamResults
   attr_accessor :page, :results
 
-
   # BELOW METHOD IS DYNAMIC AND WILL PULL FOR ANY TEAM
   # def initialize(team_name)
   #   @page = Nokogiri::HTML(open("http://www.basketball-reference.com/teams/#{team_name}/2015_games.html"))
