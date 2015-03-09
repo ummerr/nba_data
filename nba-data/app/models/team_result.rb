@@ -21,6 +21,26 @@ class TeamResult < ActiveRecord::Base
     end
   end
 
+  def wins
+    count = 0
+    @results.each do |result|
+      if result == 'W'
+        count += 1
+      end
+    end
+    return count
+  end
+
+  def losses
+    count = 0
+    @results.each do |result|
+      if result == 'L'
+        count += 1
+      end
+    end
+    return count
+  end
+
   # HAWKS_URL = "http://www.basketball-reference.com/teams/ATL/2015_games.html"
   # page = Nokogiri::HTML(open(HAWKS_URL))
 
