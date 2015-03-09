@@ -1,9 +1,10 @@
 class TeamResult < ActiveRecord::Base
-  attr_accessor :page, :results
+  attr_accessor :page, :results, :team_name
 
-  def initialize(team_name)
-    @page = Nokogiri::HTML(open("http://www.basketball-reference.com/teams/#{team_name}/2015_games.html"))
+  def initialize(team_abbr)
+    @page = Nokogiri::HTML(open("http://www.basketball-reference.com/teams/#{team_abbr}/2015_games.html"))
     @results = []
+    @team_abbr = team_abbr
     get_rows
   end
 
