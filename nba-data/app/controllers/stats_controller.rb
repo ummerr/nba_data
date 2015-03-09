@@ -7,7 +7,7 @@ class StatsController < ApplicationController
   end
 
   def find_results
-    @team = TeamResult.new(params[:team_name])
+    @team = TeamResult.new(params[:team_abbr])
     @results = @team.results
   end
 

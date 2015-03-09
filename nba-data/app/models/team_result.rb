@@ -1,5 +1,5 @@
 class TeamResult < ActiveRecord::Base
-  attr_accessor :page, :results, :team_name
+  attr_accessor :page, :results, :team_abbr
 
   def initialize(team_abbr)
     @page = Nokogiri::HTML(open("http://www.basketball-reference.com/teams/#{team_abbr}/2015_games.html"))
