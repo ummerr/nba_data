@@ -26,10 +26,19 @@
 
 .win {
   background-color: green;
+  display: inline;
+  width: 1.2%;
 }
 
 .loss {
   background-color: red;
+  display: inline;
+  width: 1.2%;
+}
+
+#chart-container {
+  width: 100%;
+  border: 1px solid blue;
 }
 
 .team {
