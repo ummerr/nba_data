@@ -2,14 +2,27 @@ require 'rubygems'
 require 'nokogiri'
 require 'open-uri'
 
-HAWKS_URL = "http://www.basketball-reference.com/teams/ATL/2015_games.html"
+# HAWKS_URL = "http://www.basketball-reference.com/teams/ATL/2015_games.html"
+# page = Nokogiri::HTML(open(HAWKS_URL))
 
-page = Nokogiri::HTML(open(HAWKS_URL))
+page = Nokogiri::HTML(open('hawks.html'))
+
 rows = page.css("tr")
-columns = rows[1].css("td")[7].text
-puts columns
-p columns.class
+p rows
 
+rows[1..21].each do |row|
+  p row.css("td")[7]
+end
+
+# column = rows[21].css("td")[7].text
+# p column
+
+# columns = rows[1].css("td")[7].text
+# puts columns
+# p columns.class
+
+
+#column 7 is W or L
 
 # <td align="right">1</td>
 # <td align="left" csk="2014-10-29"><a href="/boxscores/index.cgi?month=10&amp;day=29&amp;year=2014">Wed, Oct 29, 2014</a></td>
