@@ -1,17 +1,17 @@
 <p>NBA Streaks</p>
-        <div id='container'>
+  <div id='container'>
 
-          <%= form_tag("/results", method: "POST") do %>
-            <%= label_tag(:q, "Enter Team Name(3 Letter Acronym):") %><br>
-            <%= text_field_tag(:team_abbr) %>
-            <%= submit_tag("Find Results") %>
-          <% end %>
+    <%= form_tag("/results", method: "POST") do %>
+      <%= label_tag(:q, "Enter Team Name(3 Letter Acronym):") %><br>
+      <%= text_field_tag(:team_abbr) %>
+      <%= submit_tag("Find Results") %>
+    <% end %>
 
-          <h3>Todo</h3>
-          <ul>
-            <li>Grab Data from Online Site (JSON? jQuery? NokoGiri?)</li>
-            <li>Create functions to display streaks for each team</li>
-            <li>Create templates to render each team streak</li>
-            <li>Use D3.js to make an interesting display</li>
-          </ul>
-        </div>
+    <h3>Todo</h3>
+    <ul>
+      <li>Grab Data from Online Site (JSON? jQuery? NokoGiri?)</li>
+      <li>Create functions to display streaks for each team</li>
+      <li>Create templates to render each team streak</li>
+      <li>Use D3.js to make an interesting display</li>
+    </ul>
+  </div>

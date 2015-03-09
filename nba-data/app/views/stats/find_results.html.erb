@@ -2,6 +2,13 @@
 <h2><%= Date.today.to_s %></h2>
 <h2>Wins: <%= @team.wins %></h2>
 <h2>Losses: <%= @team.losses %></h2>
-<% @results.each do |result| %>
-  <span><%= result %>,</span>
-<% end %>
+
+  <div id='chart-container'>
+  <% @results.each do |result| %>
+    <% if result == 'W' %>
+      <div class='win'>W</div>
+    <% else %>
+      <div class='loss'>L</div>
+    <% end %>
+  <% end %>
+  </div>

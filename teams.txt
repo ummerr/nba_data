@@ -21,7 +21,7 @@ NYK - New York Knickerbockers
 ORL - Orlando Magic
 OKC - Oklahoma City Thunder
 PHI - Philadelphia 76ers
-PHX - Phoenix Suns
+PHO - Phoenix Suns
 POR - Portland Trailblazers
 SAC - Sacramento Kings
 SAS - San Antonio Spurs
