@@ -30,7 +30,7 @@ class TeamResults
   def get_results(rows)
     rows[1..-1].each do |row|
       if row.css("td")[7] != nil
-        @results << row.css("td")[7].text #row 7 is the win loss of a team
+        @results << row.css("td")[7].text #row[7] is the win loss of a team for a game
       end
     end
   end
